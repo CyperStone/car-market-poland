@@ -6,7 +6,7 @@ Exploratory data analysis and car prices prediction.
 
 ## Project Overview
 * Analyzed and visualized the car market in Poland (e.g the most popular brands and models, frequent features, or price distribution)
-* Created a model that predicts car prices (RMSE ~ 5250 USD) to help people to make a initial estimate of vehicle price range
+* Created a model that predicts car prices (RMSE ~ 5250 USD) to help people to make a initial estimate of vehicle price bracket
 ![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/predicted_vs_actual.png)
 
 ## Technologies and Resources
@@ -16,6 +16,7 @@ Exploratory data analysis and car prices prediction.
 
 ## About the Dataset
 The dataset contains 208,304 observations with 25 variables, posted from 2021-03-26 to 2021-05-05 on the polish website.
+
 Variables description:
 * ID - unique offer's ID
 * Price - car price
@@ -48,7 +49,28 @@ Variables description:
   * Removed duplicated rows and columns with more than 30% of missing values
   * Extracted province names from whole offer location addresses
   * Used CurrencyConverter to convert prices to USD respecting exchange rate on offer publication date
-  * Extracted day and month from offer publication date
+  * Extracted day and month and day of the week from offer publication date
   * Created custom transformer for converting the least frequent categorical feature values to one common value
   * Created custom transformer for extracting additional car features
-  * Created nested pipeline to perform scaling, encoding, and imputing missing values differently for different columns
+  * Created nested pipeline to perform scaling, encoding, and imputing missing values differently for various columns
+* **Model Building**:
+  * Chose RMSE metric to penalise large errors
+  * Tried different models: Ridge Regression, LinearSVR, DecisionTreeRegressor and XGBRegressor
+  * Selected XGBRegressor since it outperformed other models
+  * Tuned XGBRegressor hyperparameters
+  * Tested final model on test set
+
+## EDA Highlights
+* **Distribution of car prices on the Polish market**:
+![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/prices.png)
+* **Distribution of car production years on the Polish market**:
+![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/production_years.png)
+* **The most popular car brands on the Polish market**:
+![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/brands.png)
+
+## Final Model
+* As mentioned in the introduction, the final model achieved RMSE ~ 5250 USD and R2 score = 0.944
+* Car features that were most valuable for predictive modeling:
+![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/feature_importances.png)
+* Prediction errors distribution of the final model:
+![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/errors_histogram.png)
