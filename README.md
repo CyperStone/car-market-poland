@@ -1,3 +1,4 @@
+![wallpaper](https://user-images.githubusercontent.com/67295703/162627938-4eb70598-3de7-4854-8d17-11dd16fe27bb.jpg)
 # Car Market in Poland
 Exploratory data analysis and car prices prediction. 
 
@@ -9,5 +10,5 @@ Exploratory data analysis and car prices prediction.
 
 ## Technologies and Resources
 * Python Version: 3.9
-* Packeges: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, plotly, currency_converter, ast
+* Packeges: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, plotly, currency_converter, ast, pickle
 * Dataset: https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset
