@@ -5,8 +5,8 @@ Exploratory data analysis and car prices prediction.
 [Link to the full notebook](https://nbviewer.org/github/CyperStone/car-market-poland/blob/main/car_market_in_poland.ipynb)
 
 ## Project Overview
-* Analyzed and visualized the car market in Poland (e.g the most popular brands and models, frequent features, or price distribution)
-* Created a model that predicts car prices (RMSE ~ 5250 USD) to help people to make a initial estimate of vehicle price bracket
+* Analyzed and visualized the car market in Poland (e.g the most popular brands and models, frequent car features, or price distribution)
+* Created a model that predicts car prices (RMSE ~ 5250 USD) to help people to make an initial estimate of vehicle price bracket
 ![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/predicted_vs_actual.png)
 
 ## Technologies and Resources
