@@ -4,6 +4,10 @@ import streamlit as st
 import streamlit.components.v1 as components
 from sklearn.base import BaseEstimator, TransformerMixin
 from currency_converter import CurrencyConverter
+from pathlib import Path
+
+
+folder_path = Path(__file__).parents[0]
 
 
 class CarsTransformer(BaseEstimator, TransformerMixin):
@@ -62,7 +66,7 @@ class CarFeaturesTransformer(BaseEstimator, TransformerMixin):
 
 
 def load_model():
-    with open('.\\web_app_data\\simplified_model.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/simplified_model.pkl', 'rb') as file:
         model = pickle.load(file)
     return model
 
@@ -76,41 +80,41 @@ def get_exchange_rate():
 
 @st.cache
 def load_preprocessor():
-    with open('.\\web_app_data\\preprocessor.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/preprocessor.pkl', 'rb') as file:
         preprocessor = pickle.load(file)
     return preprocessor
 
 
 @st.cache
 def load_cols_info():
-    with open('.\\web_app_data\\Colour.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Colour.pkl', 'rb') as file:
         colours = pickle.load(file)
 
-    with open('.\\web_app_data\\Condition.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Condition.pkl', 'rb') as file:
         conditions = pickle.load(file)
 
-    with open('.\\web_app_data\\Drive.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Drive.pkl', 'rb') as file:
         drives = pickle.load(file)
 
-    with open('.\\web_app_data\\Features.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Features.pkl', 'rb') as file:
         features = pickle.load(file)
 
-    with open('.\\web_app_data\\Fuel_type.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Fuel_type.pkl', 'rb') as file:
         fuel_types = pickle.load(file)
 
-    with open('.\\web_app_data\\Offer_location.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Offer_location.pkl', 'rb') as file:
         offer_locations = pickle.load(file)
 
-    with open('.\\web_app_data\\Transmission.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Transmission.pkl', 'rb') as file:
         transmissions = pickle.load(file)
 
-    with open('.\\web_app_data\\Type.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Type.pkl', 'rb') as file:
         body_types = pickle.load(file)
 
-    with open('.\\web_app_data\\Vehicle_brand.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Vehicle_brand.pkl', 'rb') as file:
         brands = pickle.load(file)
 
-    with open('.\\web_app_data\\Vehicle_model.pkl', 'rb') as file:
+    with open(folder_path / 'web_app_data/Vehicle_model.pkl', 'rb') as file:
         models = pickle.load(file)
 
     return colours, conditions, drives, features, fuel_types, offer_locations, transmissions, body_types, brands, models
@@ -118,43 +122,43 @@ def load_cols_info():
 
 @st.cache
 def load_htmls():
-    with open('.\\visualization\\car_prices.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_prices.html', 'r', encoding='utf-8') as file:
         prices_HTML = file.read()
 
-    with open('.\\visualization\\production_years.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/production_years.html', 'r', encoding='utf-8') as file:
         production_years_HTML = file.read()
 
-    with open('.\\visualization\\car_brands.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_brands.html', 'r', encoding='utf-8') as file:
         brands_HTML = file.read()
 
-    with open('.\\visualization\\car_models.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_models.html', 'r', encoding='utf-8') as file:
         models_HTML = file.read()
 
-    with open('.\\visualization\\provinces.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/provinces.html', 'r', encoding='utf-8') as file:
         provinces_HTML = file.read()
 
-    with open('.\\visualization\\mileage.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/mileage.html', 'r', encoding='utf-8') as file:
         mileages_HTML = file.read()
 
-    with open('.\\visualization\\horsepowers.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/horsepowers.html', 'r', encoding='utf-8') as file:
         horsepowers_HTML = file.read()
 
-    with open('.\\visualization\\displacements.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/displacements.html', 'r', encoding='utf-8') as file:
         displacements_HTML = file.read()
 
-    with open('.\\visualization\\car_conditions.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_conditions.html', 'r', encoding='utf-8') as file:
         conditions_HTML = file.read()
 
-    with open('.\\visualization\\car_transmissions.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_transmissions.html', 'r', encoding='utf-8') as file:
         transmissions_HTML = file.read()
 
-    with open('.\\visualization\\car_drives.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_drives.html', 'r', encoding='utf-8') as file:
         drives_HTML = file.read()
 
-    with open('.\\visualization\\car_types.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_types.html', 'r', encoding='utf-8') as file:
         types_HTML = file.read()
 
-    with open('.\\visualization\\car_fuel_types.html', 'r', encoding='utf-8') as file:
+    with open(folder_path / 'visualization/car_fuel_types.html', 'r', encoding='utf-8') as file:
         fuel_types_HTML = file.read()
 
     return prices_HTML, production_years_HTML, brands_HTML, models_HTML, provinces_HTML, mileages_HTML, \
