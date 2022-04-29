@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 data/Car_sale_ads.csv
+.idea/
+__pycache__/
