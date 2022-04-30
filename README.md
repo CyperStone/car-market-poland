@@ -1,17 +1,21 @@
 ![wallpaper](https://user-images.githubusercontent.com/67295703/162627938-4eb70598-3de7-4854-8d17-11dd16fe27bb.jpg)
 # Car Market in Poland
-Exploratory data analysis and car prices prediction. 
+Web app with car market visualization and car price prediction.
 
 [Link to the web application](https://share.streamlit.io/cyperstone/car-market-poland/main/web_app.py)
 
 ## Project Overview
 * Analyzed and visualized the car market in Poland (e.g the most popular brands and models, frequent car features, or price distribution)
 * Created a model that predicts car prices (RMSE ~ 5250 USD): [Link to the full notebook](https://nbviewer.org/github/CyperStone/car-market-poland/blob/main/car_market_in_poland.ipynb)
-![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/predicted_vs_actual.png)
+* Created and deployed simplified model (RMSE ~ 6080 USD) to web application which allows people to make an initial estimate of car price
+
+
+![screen-gif](https://github.com/CyperStone/car-market-poland/blob/main/visualization/prediction.gif)
+![screen-gif](https://github.com/CyperStone/car-market-poland/blob/main/visualization/visualization.gif)
 
 ## Technologies and Resources
 * Python Version: 3.9
-* Packeges: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, plotly, currency_converter, ast, pickle
+* Packeges: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, plotly, streamlit, currency_converter, ast, pickle
 * Dataset: https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset
 
 ## About the Dataset
@@ -60,16 +64,9 @@ Variables description:
   * Tuned XGBRegressor hyperparameters
   * Tested final model on test set
 
-## EDA Highlights
-* **Distribution of car prices on the Polish market**:
-![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/prices.png)
-* **Distribution of car production years on the Polish market**:
-![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/production_years.png)
-* **The most popular car brands on the Polish market**:
-![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/brands.png)
-
 ## Final Model
-* As mentioned in the introduction, the final model achieved RMSE ~ 5250 USD and R2 score = 0.944
+* As mentioned in the introduction, the best model achieved RMSE ~ 5250 USD and R2 score = 0.944:
+![alt_text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/predicted_vs_actual.png) 
 * Car features that were most valuable for predictive modeling:
 ![alt text](https://github.com/CyperStone/car-market-poland/blob/main/visualization/feature_importances.png)
 * Prediction errors distribution of the final model:
