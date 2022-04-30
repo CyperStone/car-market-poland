@@ -5,6 +5,7 @@ import streamlit.components.v1 as components
 from sklearn.base import BaseEstimator, TransformerMixin
 from currency_converter import CurrencyConverter
 from pathlib import Path
+from xgboost.sklearn import XGBRegressor
 
 
 folder_path = Path(__file__).parents[0]
@@ -65,6 +66,7 @@ class CarFeaturesTransformer(BaseEstimator, TransformerMixin):
         return X_new.drop(columns=[col_name])
 
 
+@st.cache(hash_funcs={XGBRegressor: id})
 def load_model():
     with open(folder_path / 'web_app_data/simplified_model.pkl', 'rb') as file:
         model = pickle.load(file)
@@ -192,7 +194,7 @@ def show_prediction_page():
 
     estimate = st.button('ESTIMATE CAR PRICE')
     if estimate:
-        model = load_model()
+        regressor = load_model()
         preprocessor = load_preprocessor()
 
         X = pd.DataFrame({'Condition': [condition], 'Vehicle_brand': [brand], 'Vehicle_model': [model],
@@ -201,7 +203,7 @@ def show_prediction_page():
                           'Transmission': [transmission], 'Type': [body_type], 'Doors_number': [doors_number],
                           'Colour': [colour], 'Offer_location': [offer_location], 'Features': [additional_features]})
         X_prepared = preprocessor.transform(X)
-        price_USD = model.predict(X_prepared)[0]
+        price_USD = regressor.predict(X_prepared)[0]
         USD_to_PLN = get_exchange_rate()
         price_PLN = USD_to_PLN * price_USD
 
