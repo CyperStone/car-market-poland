@@ -13,9 +13,14 @@ Web app with car market visualization and car price prediction.
 ![screen-gif](https://github.com/CyperStone/car-market-poland/blob/main/visualization/prediction.gif)
 ![screen-gif](https://github.com/CyperStone/car-market-poland/blob/main/visualization/visualization.gif)
 
+
+* Deployed model to desktop application created using PyQt6:
+
+![desktop_app](https://user-images.githubusercontent.com/67295703/171172171-120f93e5-e3bb-4bbe-af18-c86f535888ef.jpg)
+
 ## Technologies and Resources
 * Python Version: 3.9
-* Packeges: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, plotly, streamlit, currency_converter, ast, pickle
+* Packeges: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, plotly, streamlit, PyQt6, currency_converter, ast, pickle
 * Dataset: https://www.kaggle.com/datasets/bartoszpieniak/poland-cars-for-sale-dataset
 
 ## About the Dataset
